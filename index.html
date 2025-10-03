@@ -1,0 +1,34 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Mi Jardín Inteligente</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <link rel="manifest" href="/manifest.json">
+    
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <link rel="apple-touch-icon" href="https://cdn-icons-png.freepik.com/256/4130/4130040.png?semt=ais_white_label">
+    
+    <style>
+        /* Oculta los márgenes y permite que la PWA sea a pantalla completa */
+        body, html { margin: 0; padding: 0; height: 100%; overflow: hidden; }
+        iframe { width: 100%; height: 100%; border: none; }
+    </style>
+</head>
+<body>
+    <iframe src="https://ai.studio/apps/drive/16vUL4d4sCirDDOPRekUlklFn7PO4qoGb" title="Mi Jardín Inteligente App"></iframe>
+
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js')
+                    .then(registration => console.log('SW registrado:', registration))
+                    .catch(error => console.log('Fallo SW:', error));
+            });
+        }
+    </script>
+</body>
+</html>
