@@ -4,28 +4,22 @@
 <head>
     <meta charset="UTF-8">
     <title>Mi Jardín Inteligente</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    
-    <link rel="manifest" href="/manifest.json">
-    
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="default">
-    <link rel="apple-touch-icon" href="https://cdn-icons-png.freepik.com/256/4130/4130040.png?semt=ais_white_label">
-    
-    <style>
-        /* Oculta los márgenes y permite que la PWA sea a pantalla completa */
-        body, html { margin: 0; padding: 0; height: 100%; overflow: hidden; }
-        iframe { width: 100%; height: 100%; border: none; }
-    </style>
-</head>
+    </head>
 <body>
-    <iframe src="https://ai.studio/apps/drive/16vUL4d4sCirDDOPRekUlklFn7PO4qoGb" title="Mi Jardín Inteligente App"></iframe>
-
+    <h1>Cargando Mi Jardín Inteligente...</h1>
+    
     <script>
+        const AI_STUDIO_URL = 'https://ai.studio/apps/drive/16vUL4d4sCirDDOPRekUlklFn7PO4qoGb';
+        
+        // Redirecciona inmediatamente al cargar la página.
+        // Esto evita el iframe y carga la página directamente en la ventana.
+        window.location.replace(AI_STUDIO_URL);
+
+        // Opcionalmente, puedes registrar el Service Worker aquí si quieres que la PWA shell funcione.
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', () => {
                 navigator.serviceWorker.register('/sw.js')
-                    .then(registration => console.log('SW registrado:', registration))
+                    .then(registration => console.log('SW registrado para el shell PWA'))
                     .catch(error => console.log('Fallo SW:', error));
             });
         }
